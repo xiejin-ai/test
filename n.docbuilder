@@ -1,0 +1,10 @@
+builder.OpenFile("https://dev-microcraft-storage.microware1985.cn/microcraft/upload_files/a9cbcf31-364a-4259-a595-8493c02540f9/aa2bb29d-cf1a-4eb6-b8fd-1febcb88b24c.docx?AWSAccessKeyId=zF0oScWIYKm7Wj82u1Y8&Signature=R1n3pfA4Pig2S1dknbfb7Hyc61E%3D&Expires=1733304034")
+const oDocument = Api.GetDocument()
+GlobalVariable["CommentsReport"] = oDocument.GetPageCount()
+builder.CloseFile()
+
+builder.CreateFile("docx")
+const oCommentsReport = GlobalVariable["CommentsReport"]
+// now you can use the 'CommentsReport' variable from the previous document in the current document
+builder.SaveFile("docx", "GetCommentsReport.docx")
+builder.CloseFile()
