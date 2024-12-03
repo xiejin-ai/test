@@ -5,10 +5,9 @@ builder.CloseFile()
 
 builder.CreateFile("docx")
 const oCommentsReport = GlobalVariable["CommentsReport"]
-const oDocument1 = Api.GetDocument()
-const oParagraph = Api.CreateParagraph()
+const oDocument = Api.GetDocument()
+const oParagraph = oDocument.GetElement(0)
 oParagraph.SetJc("center")
-oParagraph.AddText(oCommentsReport)
-oDocument1.Push(oParagraph)
+oParagraph.AddText("Center")
 builder.SaveFile("docx", "GetCommentsReport.docx")
 builder.CloseFile()
