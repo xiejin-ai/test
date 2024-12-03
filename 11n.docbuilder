@@ -8,6 +8,6 @@ const oCommentsReport = GlobalVariable["CommentsReport"]
 const oDocument = Api.GetDocument()
 const oParagraph = oDocument.GetElement(0)
 oParagraph.SetJc("center")
-oParagraph.AddText("Center")
+oParagraph.AddText(oCommentsReport + "111")
 builder.SaveFile("docx", "GetCommentsReport.docx")
 builder.CloseFile()
