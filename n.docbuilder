@@ -7,8 +7,9 @@ builder.CreateFile("docx")
 const oCommentsReport = GlobalVariable["CommentsReport"]
 const oDocument1 = Api.GetDocument()
 const oParagraph = Api.CreateParagraph()
+oParagraph.SetJc("center")
 oParagraph.AddText(oCommentsReport)
-oDocument1.push(oParagraph)
+oDocument1.Push(oParagraph)
 // now you can use the 'CommentsReport' variable from the previous document in the current document
 builder.SaveFile("docx", "GetCommentsReport.docx")
 builder.CloseFile()
