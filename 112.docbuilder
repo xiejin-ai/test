@@ -3,10 +3,10 @@ const oDocument = Api.GetDocument()
 GlobalVariable["CommentsReport"] = oDocument.GetPageCount()
 builder.CloseFile()
 
-builder.CreateFile("txt")
+builder.CreateFile("docx")
 const oCommentsReport = GlobalVariable["CommentsReport"]
 const oDocument = Api.GetDocument()
 const oParagraph = oDocument.GetElement(0)
-oParagraph.AddText(oCommentsReport + "111")
-builder.SaveFile("txt", "GetCommentsReport.txt")
+oParagraph.AddText(oCommentsReport)
+builder.SaveFile("docx", "GetCommentsReport.docx")
 builder.CloseFile()
