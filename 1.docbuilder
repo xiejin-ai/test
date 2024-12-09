@@ -7,7 +7,6 @@ builder.CreateFile("txt")
 const oCommentsReport = GlobalVariable["CommentsReport"]
 const oDocument = Api.GetDocument()
 const oParagraph = oDocument.GetElement(0)
-oParagraph.SetJc("center")
 oParagraph.AddText(oCommentsReport + "111")
 builder.SaveFile("txt", "GetCommentsReport.txt")
 builder.CloseFile()
